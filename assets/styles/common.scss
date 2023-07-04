@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@font-face {
+    font-family: 'Druk Cyr';
+    src: url('../fonts/DrukCyr/DrukCyr-BoldItalic.eot');
+    src: local('Druk Cyr Bold Italic'), local('DrukCyr-BoldItalic'),
+        url('../fonts/DrukCyr/DrukCyr-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DrukCyr/DrukCyr-BoldItalic.woff2') format('woff2'),
+        url('../fonts/DrukCyr/DrukCyr-BoldItalic.woff') format('woff'),
+        url('../fonts/DrukCyr/DrukCyr-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+    min-height: 100vh;
+    min-width: 1920px;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 1920px;
+    font-family: 'Open Sans';
+    letter-spacing: -0.015em; /* adjust letter spacing depending on font size */
+    word-spacing: -0.1em; /* adjust word spacing depending on font size */
+    -webkit-font-smoothing: antialiased; /* looks better */
+    -moz-osx-font-smoothing: grayscale; /* looks better */
+    color: var(--color-black);
+    overflow-x: hidden;
+}
+
+::placeholder {
+    color: #B6BCC8;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: #B6BCC8;
+}
+::-ms-input-placeholder {
+    color: #B6BCC8;
+}
