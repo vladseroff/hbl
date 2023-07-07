@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false,
     devtools: {
         enabled: true
     },
@@ -18,7 +19,8 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
             ]
-        }
+        },
+        baseURL: '/hbl-static/',
     },
     css: [
         '@/assets/styles/common.scss'
