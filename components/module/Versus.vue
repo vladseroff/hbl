@@ -1,25 +1,35 @@
 <template lang="pug">
 .versus
     .versus__boxes
-        .versus__box.grey
+        .versus__box.grey(
+            v-parallax="{speed: 10}"
+        )
             .versus__box-figure
                 img(
                     src="/images/img4.png"
                 )
-                UiButton СМОТРЕТЬ
+                UiButton(
+                    href="#"
+                ) СМОТРЕТЬ
             .versus__text
                 .versus__title HBL CLASSIC t-jaket
                 .versus__price 6000₽
-        .versus__box.blue
+        .versus__box.blue(
+            v-parallax="{speed: -8}"
+        )
             .versus__box-figure
                 img(
                     src="/images/img5.png"
                 )
-                UiButton СМОТРЕТЬ
+                UiButton(
+                    href="#"
+                ) СМОТРЕТЬ
             .versus__text
                 .versus__title HBL CLASSIC t-SHIRT
                 .versus__price 5000₽
-    .versus__icon
+    .versus__icon(
+        v-parallax="{transform: 'translateX(-50%)', speed: -30}"
+    )
         img(
             src="@/assets/icons/vs.svg"
         )
@@ -62,7 +72,6 @@
         position: absolute;
         left: 50%;
         top: 2%;
-        transform: translateY(-50%);
         transform: translateX(-50%);
         img {
             display: block;
@@ -138,7 +147,7 @@
         }
         &.blue {
             margin-right: -100px;
-            margin-left: -44px;
+            margin-left: -100px;
             #{$box} {
                 &-figure {
                     background: #2C405B;

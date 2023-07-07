@@ -4,10 +4,23 @@
     ModuleHomeBanner
     ModuleFirstDrop
     ModuleVersus
+    ModuleHot
+    ModuleDelivery
+    ModuleGallery
+    ModuleCatalog
+    ModuleVersus
+    ModuleBest
+    ModuleCatalog(
+        minimal
+    )
+    ModuleStock
+    BaseFooter
 </template>
 
 <script setup>
-
+onMounted(() => {
+    
+})
 </script>
 
 <style lang="scss" scoped>

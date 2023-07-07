@@ -1,16 +1,24 @@
 <template lang="pug">
 .first-drop
-    .first-drop__logo
+    .first-drop__logo(
+        v-parallax="{speed: -8}"
+    )
         img(
             src="@/assets/icons/logo2.svg"
         )
-    .first-drop__title 1ST DROP
-    .first-drop__text ПЕРВАЯ КОЛЛЕКЦИЯ ВЕЩЕЙ УЖЕ НА САЙТЕ 
+    .first-drop__title(
+        v-parallax="{speed: 8}"
+    ) 1ST DROP
+    .first-drop__text(
+        v-parallax="{speed: -30}"
+    ) ПЕРВАЯ КОЛЛЕКЦИЯ ВЕЩЕЙ УЖЕ НА САЙТЕ 
         br 
         |ШИП ПО ВСЕЙ ПЛАНЕТЕ, НЕ НАДО СОМНЕВАТЬСЯ, 
         br 
         |НАДО ПЕРЕХОДИТЬ ПО ССЫЛКЕ В ИСТОЧНИКЕ
-    UiButton ВМАГАЗИН
+    UiButton(
+        href="#"
+    ) ВМАГАЗИН
 </template>
 
 <style lang="scss" scoped>
@@ -20,9 +28,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 300px;
+    padding-bottom: 350px;
     &__logo {
-        margin-top: -220px;
+        margin-top: -120px;
         position: relative;
         z-index: 9;
     }

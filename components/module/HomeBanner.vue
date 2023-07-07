@@ -1,19 +1,9 @@
 <template lang="pug">
 .banner
     .banner__tape
-        img(
-            src="@/assets/icons/tape.svg"
-        )
+        DecorTape
     .banner__carousel
-        .banner__tapes
-            .banner__tape
-                img(
-                    src="@/assets/icons/tape.svg"
-                )
-            .banner__tape
-                img(
-                    src="@/assets/icons/tape.svg"
-                )
+        DecorTapes
         .banner__carousel-wrapper
             .banner__item
                 img(
@@ -33,21 +23,30 @@
                 )
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .banner {
     background: var(--color-yellow);
-    overflow: hidden;
     $root: &;
     &__tape {
-        left: -280px;
         position: relative;
-        img {
-            display: block;
-        }
     }
     &__carousel {
-        top: -20px;
+        top: 60px;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .tape {
+            position: absolute;
+            &:nth-child(1) {
+                top: 810px !important;
+                // transform: rotate(18deg) translateY(calc(var(--scrollTop) / -5)) !important;
+            }
+            &:nth-child(2) {
+                // transform: rotate(-13deg) translateY(calc(var(--scrollTop) / -10)) !important;
+                top: 630px !important;
+            }
+        }
         &-wrapper {
             display: flex;
         }
@@ -55,50 +54,24 @@
     &__item {
         position: relative;
         &:nth-child(1) {
-            left: -100px;
+            margin-right: -190px;
             z-index: 2;
         }
         &:nth-child(2) {
-            left: -300px;
+            margin-right: -220px;
             z-index: 3;
         }
         &:nth-child(3) {
-            left: -530px;
+            margin-right: -165px;
             z-index: 4;
             transform: translateY(-60px);
         }
         &:nth-child(4) {
-            left: -705px;
             z-index: 1;
             transform: rotate(20deg) translateY(-20px);
         }
         img {
             display: block;
-        }
-    }
-    &__tapes {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        #{$root} {
-            &__tape {
-                position: absolute;
-                &:nth-child(1) {
-                    transform: rotate(15deg);
-                    left: -157px;
-                    top: 830px;
-                    z-index: 2;
-                }
-                &:nth-child(2) {
-                    transform: rotate(-13deg);
-                    left: -248px;
-                    top: 646px;
-                    z-index: 1;
-                }
-            }
         }
     }
 }

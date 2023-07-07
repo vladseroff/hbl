@@ -25,6 +25,8 @@ header.header
 
 <style lang="scss" scoped>
 .header {
+    position: relative;
+    z-index: 100;
     background: var(--color-red);
     &__top {
         display: flex;

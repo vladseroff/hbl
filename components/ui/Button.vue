@@ -1,7 +1,19 @@
 <template lang="pug">
-.button
+component.button(
+    :is="href ? 'a' : 'div'"
+    :href="href"
+)
     slot
 </template>
+
+<script setup>
+defineProps({
+    href: {
+        type: String,
+        default: ''
+    }
+})
+</script>
 
 <style lang="scss" scoped>
 .button {
@@ -16,5 +28,6 @@
     font-size: 36px;
     background: var(--color-black);
     cursor: pointer;
+    text-decoration: none;
 }
 </style>
