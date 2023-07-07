@@ -20,7 +20,7 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
             ]
         },
-        baseURL: '/hbl/',
+        baseURL: '/hbl/blob/gh-pages/',
     },
     css: [
         '@/assets/styles/common.scss'
