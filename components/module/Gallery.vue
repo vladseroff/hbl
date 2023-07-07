@@ -35,7 +35,9 @@
     a.gallery__btn(
         href="#"
         v-parallax="{transform: 'rotate(-9deg)', speed: -15}"
-    ) ГО ТОЖЕ
+    ) 
+        span ГО ТОЖЕ
+        em
 </template>
 
 <style lang="scss" scoped>
@@ -94,7 +96,7 @@
     }
     &__btn {
         transform: rotate(-9deg);
-        text-decoration: underline;
+        text-decoration: none;
         color: var(--color-red);
         font-family: 'Druk Cyr';
         font-size: 100px;
@@ -103,6 +105,28 @@
         font-weight: 700;
         cursor: pointer;
         margin-bottom: -60px;
+        transition: .3s ease;
+        &:hover {
+            color: #fff;
+            em {
+                height: 100%;
+                transform: skew(-9deg) translate3d(3px, 0, 0);
+            }
+        }
+        span {
+            position: relative;
+            z-index: 2;
+        }
+        em {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 8px;
+            width: 100%;
+            transform: skew(-9deg) translate3d(-4px, 0, 0);
+            background: var(--color-red);
+            transition: .3s ease;
+        }
     }
 }
 </style>

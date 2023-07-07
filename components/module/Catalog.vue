@@ -42,6 +42,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -55,6 +56,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -68,6 +70,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -81,6 +84,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -100,6 +104,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -113,6 +118,7 @@
                             )
                         UiButton(
                             href="#"
+                            color="yellow"
                         ) СМОТРЕТЬ
                         .catalog__item-text
                             .catalog__item-text-wrapper
@@ -216,8 +222,6 @@ defineProps({
             }
         }
         .button {
-            background: var(--color-yellow);
-            color: var(--color-black);
             position: absolute;
             left: 50%;
             bottom: 180px;

@@ -10,6 +10,7 @@
         |пополняем каждый месяц
     UiButton(
         href="#"
+        hoverColor="red"
         v-parallax="{speed: -15}"
     ) ВЫБРАТЬ
     

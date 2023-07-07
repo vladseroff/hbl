@@ -10,6 +10,7 @@
                 )
                 UiButton(
                     href="#"
+                    color="yellow"
                 ) СМОТРЕТЬ
             .versus__text
                 .versus__title HBL CLASSIC t-jaket
@@ -23,6 +24,7 @@
                 )
                 UiButton(
                     href="#"
+                    color="yellow"
                 ) СМОТРЕТЬ
             .versus__text
                 .versus__title HBL CLASSIC t-SHIRT
@@ -87,12 +89,10 @@
         cursor: pointer;
         $box: &;
         .button {
-            background: var(--color-yellow);
             position: absolute;
             left: 60%;
             bottom: 0;
             transform: scale(.8) rotate(0deg) skew(20deg) translateX(-60%) translateY(-50%);
-            color: var(--color-black);
             opacity: 0;
             transition: .3s ease;
         }

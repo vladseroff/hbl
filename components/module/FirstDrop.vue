@@ -18,6 +18,7 @@
         |НАДО ПЕРЕХОДИТЬ ПО ССЫЛКЕ В ИСТОЧНИКЕ
     UiButton(
         href="#"
+        hoverColor="red"
     ) ВМАГАЗИН
 </template>
 

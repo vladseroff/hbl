@@ -9,7 +9,10 @@ header.header(
             )
         .header__menu
             .header__menu-link.active Главное
-            a(href="#").header__menu-link Магазин
+            a(href="#").header__menu-link
+                span 
+                    p Магазин
+                    em
         .header__icon
             img(
                 src="@/assets/icons/telegram.svg"
@@ -94,8 +97,32 @@ onMounted(() => {
             font-style: italic;
             text-transform: uppercase;
             padding: 7px 14px;
-            text-decoration: underline;
+            text-decoration: none;
             margin: 0 5px;
+            position: relative;
+            &:hover {
+                em {
+                    height: 100%;
+                    background: var(--color-yellow);
+                }
+            }
+            p {
+                margin: 0;
+                position: relative;
+                z-index: 2;
+            }
+            span {
+                position: relative;
+            }
+            em {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 100%;
+                background: var(--color-black);
+                transition: .3s ease;
+            }
             &.active {
                 cursor: default;
                 text-decoration: none;
