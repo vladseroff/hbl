@@ -4,13 +4,13 @@
         color="yellow"
     )
     .stock__text(
-        v-parallax="{speed: 8}"
+        v-parallax="{speed: -8}"
     ) Полный ассортимент уже в магазине 
         br 
         |пополняем каждый месяц
     UiButton(
         href="#"
-        v-parallax="{speed: 20}"
+        v-parallax="{speed: -15}"
     ) ВЫБРАТЬ
     
 </template>

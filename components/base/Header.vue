@@ -1,5 +1,7 @@
 <template lang="pug">
-header.header
+header.header(
+    :class="{small: small}"
+)
     .header__top
         .header__icon
             img(
@@ -20,14 +22,61 @@ header.header
 </template>
 
 <script setup>
+const small = ref(false)
+onMounted(() => {
+    window.addEventListener('scroll', (event) => {
+        if (window.scrollY >= 600) {
+            small.value = true
+            document.querySelector('.app').style.cssText = 'padding-top: 446px'
+            document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
+        } else {
+            small.value = false
+            document.querySelector('.app').style.cssText = 'padding-top: 0'
+        }
+    })
+})
 
 </script>
 
 <style lang="scss" scoped>
+@keyframes anim {
+    0% {
+        transform: translateY(-100%)
+    }
+    100% {
+        transform: none;
+    }
+}
 .header {
     position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
+    height: 446px;
     background: var(--color-red);
+    transition: .4s ease;
+    $root: &;
+    &.small {
+        animation: anim 1s ease forwards;
+        position: fixed;
+        height: auto;
+        #{$root} {
+            &__top {
+                padding: 20px 40px;
+            }
+            &__bottom {
+                max-height: 0;
+            }
+            &__logo {
+                width: 240px;
+                transform: translate3d(-700px, -73px, 0);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
     &__top {
         display: flex;
         padding: 40px;
@@ -61,9 +110,19 @@ header.header
     &__bottom {
         display: flex;
         justify-content: center;
-        padding-bottom: 55px;
+        max-height: 1000px;
+        // transition: .4s ease;
         img {
             display: block;
+        }
+    }
+    &__logo {
+        width: 1588px;
+        padding-bottom: 55px;
+        margin: 0 auto;
+        // transition: .6s ease;
+        img {
+            width: 100%;
         }
     }
 }

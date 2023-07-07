@@ -14,6 +14,7 @@
         minimal
     )
     ModuleStock
+    ModuleVideo
     BaseFooter
 </template>
 

@@ -21,22 +21,21 @@ export default defineNuxtPlugin(nuxtApp => {
     })
     nuxtApp.vueApp.directive('animate', {
         mounted: (el, bind) => {
-            let observer;
             const options = {
                 rootMargin: "0px",
                 threshold: 1.0
             }
         
             const callback = (entries, observer) => {
-                console.log(entries);
-                if(entries[0].isIntersecting) {
-                    el.classList.add('animation-active')
-                    setTimeout(() => {
-                    }, bind.delay || 0)
-                }
+                console.log('asdasd');
+                // if(entries[0].isIntersecting) {
+                //     el.classList.add('animation-active')
+                //     setTimeout(() => {
+                //     }, bind.delay || 0)
+                // }
             }
         
-            observer = new IntersectionObserver(callback, options);
+            let observer = new IntersectionObserver(callback, options);
             observer.observe(el);
         },
     })

@@ -5,23 +5,65 @@
     .banner__carousel
         DecorTapes
         .banner__carousel-wrapper
-            .banner__item
-                img(
-                    src="/images/img1.png"
-                )
-            .banner__item
-                img(
-                    src="/images/img2.png"
-                )
-            .banner__item
-                img(
-                    src="/images/img3.png"
-                )
-            .banner__item
-                img(
-                    src="/images/img1.png"
-                )
+            Swiper(
+                :modules="[Autoplay]"
+                :width="1920"
+                slides-per-view="auto"
+                loop
+                freeMode
+                :loopedSlides="4"
+                :space-between="72"
+                :autoplay="{delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true}"
+                :speed="1000"
+            )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img1.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img2.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img3.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img1.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img1.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img2.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img3.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img1.png"
+                        )
 </template>
+
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
+
+</script>
 
 <style lang="scss">
 .banner {
@@ -48,7 +90,11 @@
             }
         }
         &-wrapper {
-            display: flex;
+            // display: flex;
+            width: 100vw;
+            .swiper-slide {
+                width: 400px;
+            }
         }
     }
     &__item {

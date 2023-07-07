@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 350px;
+    padding-bottom: 250px;
     &__logo {
         margin-top: -120px;
         position: relative;

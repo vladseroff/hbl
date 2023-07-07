@@ -16,63 +16,128 @@
         v-if="minimal"
     )
     .catalog__items
-        .catalog__item
-            .catalog__item-img
-                img(
-                    src="/images/img12.png"
-                )
-            UiButton(
-                href="#"
-            ) СМОТРЕТЬ
-            .catalog__item-text
-                .catalog__item-text-wrapper
-                    .catalog__item-title HBL CLASSIC T-SHIRT
-                    .catalog__item-price 5000₽
-        .catalog__item
-            .catalog__hot(
-                v-parallax="{speed: 10}"
+        client-only
+            Swiper(
+                :modules="[Autoplay]"
+                :width="1920"
+                slides-per-view="auto"
+                :loopedSlides="2"
+                centeredSlides
+                :space-between="72"
+                :autoplay="{delay: 1000, disableOnInteraction: true, pauseOnMouseEnter: true}"
+                :speed="2000"
+                loop
             )
-                img(
-                    src="@/assets/icons/hot.svg"
-                )
-            .catalog__item-img
-                img(
-                    src="/images/img13.png"
-                )
-            UiButton(
-                href="#"
-            ) СМОТРЕТЬ
-            .catalog__item-text
-                .catalog__item-text-wrapper
-                    .catalog__item-title HBL CLASSIC T-SHIRT
-                    .catalog__item-price 5000₽
-        .catalog__item
-            .catalog__item-img
-                img(
-                    src="/images/img14.png"
-                )
-            UiButton(
-                href="#"
-            ) СМОТРЕТЬ
-            .catalog__item-text
-                .catalog__item-text-wrapper
-                    .catalog__item-title HBL CLASSIC T-SHIRT
-                    .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__hot(
+                            v-parallax="{speed: 10}"
+                        )
+                            img(
+                                src="@/assets/icons/hot.svg"
+                            )
+                        .catalog__item-img
+                            img(
+                                src="/images/img13.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__item-img
+                            img(
+                                src="/images/img12.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__item-img
+                            img(
+                                src="/images/img14.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__item-img
+                            img(
+                                src="/images/img12.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__hot(
+                            v-parallax="{speed: 10}"
+                        )
+                            img(
+                                src="@/assets/icons/hot.svg"
+                            )
+                        .catalog__item-img
+                            img(
+                                src="/images/img13.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
+                SwiperSlide
+                    .catalog__item
+                        .catalog__item-img
+                            img(
+                                src="/images/img14.png"
+                            )
+                        UiButton(
+                            href="#"
+                        ) СМОТРЕТЬ
+                        .catalog__item-text
+                            .catalog__item-text-wrapper
+                                .catalog__item-title HBL CLASSIC T-SHIRT
+                                .catalog__item-price 5000₽
 </template>
 
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
+
 defineProps({
     minimal: {
         type: Boolean,
         default: false,
     }
 })
+
 </script>
 
 <style lang="scss">
 .catalog {
     padding-top: 100px;
-    padding-bottom: 400px;
+    padding-bottom: 500px;
     text-align: center;
     position: relative;
     &.yellow {
@@ -111,45 +176,26 @@ defineProps({
         }
     }
     &__items {
-        display: flex;
-        justify-content: center;
+        // display: flex;
+        // justify-content: center;
         position: relative;
         z-index: 11;
         margin-top: 30px;
+        .swiper {
+            overflow: visible;
+        }
+        .swiper-slide {
+            // width: 35%;
+            width: 684px !important;
+        }
     }
     &__item {
-        min-width: 684px;
+        // min-width: 684px;
         flex: none;
-        margin: 0 35px;
+        // margin: 0 35px;
         cursor: pointer;
         position: relative;
         $root: &;
-        &:nth-child(2) {
-            #{$root} {
-                &-text {
-                    bottom: -140px;
-                }
-                &-title {
-                    font-size: 120px;
-                }
-                &-price {
-                    font-size: 100px;
-                    margin-left: -14px;
-                    margin-top: -35px;
-                }
-            }
-        }
-        // &:nth-child(1) {
-        //     &:hover {
-        //         #{$root} {
-        //             &-text {
-        //                 &-wrapper {
-        //                     left: 50px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
         &:hover {
             .button {
                 opacity: 1;
@@ -190,7 +236,7 @@ defineProps({
             justify-content: center;
             text-align: left;
             position: absolute;
-            bottom: -80px;
+            bottom: -140px;
             z-index: 2;
             text-transform: uppercase;
             white-space: nowrap;
@@ -205,7 +251,7 @@ defineProps({
         &-title {
             font-family: 'Druk Cyr';
             font-style: italic;
-            font-size: 70px;
+            font-size: 120px;
             transition: .3s ease;
         }
         &-price {
@@ -214,9 +260,9 @@ defineProps({
             color: var(--color-red);
             transform: scale(.7) translateX(20px) translateY(-20px);
             opacity: 0;
-            font-size: 50px;
-            margin-top: -20px;
-            margin-left: -8px;
+            font-size: 100px;
+            margin-left: -14px;
+            margin-top: -35px;
             transition: .3s ease;
         }
     }

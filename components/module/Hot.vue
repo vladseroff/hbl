@@ -11,9 +11,7 @@
         span(
             v-parallax="{speed: 5}"
         ) WAY TO HOT
-    .hot__view(
-        v-animate
-    )
+    .hot__view
         .hot__item(
             v-parallax="{speed: -15}"
         )

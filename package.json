@@ -12,7 +12,10 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18",
     "nuxt": "^3.6.1",
-    "vite-plugin-pug": "^0.3.2",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "vite-plugin-pug": "^0.3.2"
+  },
+  "dependencies": {
+    "swiper": "^10.0.3"
   }
 }
