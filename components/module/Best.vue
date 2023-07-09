@@ -1,25 +1,28 @@
 <template lang="pug">
 .best
     .best__logo(
-        v-parallax="{speed: -8}"
+        v-parallax="{speed: -15}"
     )
         img(
             src="@/assets/icons/logo2.svg"
         )
     .best__title(
-        v-parallax="{speed: 8}"
+        v-parallax="{speed: 12}"
     ) BEST ITEM
     .best__img(
-        v-parallax="{speed: 5}"
+        v-parallax="{speed: 10}"
     )
         img(
             src="/images/img15.png"
         )
-    .best__text ЛУЧШИЙ ВЫБОР НА ЛЕТО, БУДЕТ ЖАРКО, 
+    .best__text(
+        v-parallax="{speed: 10}"
+    ) ЛУЧШИЙ ВЫБОР НА ЛЕТО, БУДЕТ ЖАРКО, 
         br 
         |А В ПАНАМЕ НЕ БУДЕТ ЖАРКО
     UiButton(
         href="#"
+        v-parallax="{speed: 10}"
     ) ВЫБРАТЬ
 </template>
 
@@ -28,7 +31,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 110px;
+    padding-bottom: 210px;
     &__logo {
         position: relative;
         z-index: 2;

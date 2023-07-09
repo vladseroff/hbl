@@ -4,11 +4,10 @@
 )
     .catalog__title(
         v-if="!minimal"
+        v-parallax="{transform: 'rotate(-9deg)', speed: 15}"
     ) HELL BROKE LOOSE 
         br 
-        span(
-            v-parallax="{speed: 8}"
-        ) WAY TO HOT
+        span WAY TO HOT
     DecorTapes(
         v-if="!minimal"
     )
@@ -24,15 +23,13 @@
                 :loopedSlides="2"
                 centeredSlides
                 :space-between="72"
-                :autoplay="{delay: 1000, disableOnInteraction: true, pauseOnMouseEnter: true}"
+                :autoplay="{delay: 1000, disableOnInteraction: false, pauseOnMouseEnter: true}"
                 :speed="2000"
                 loop
             )
                 SwiperSlide
                     .catalog__item
-                        .catalog__hot(
-                            v-parallax="{speed: 10}"
-                        )
+                        .catalog__hot
                             img(
                                 src="@/assets/icons/hot.svg"
                             )
@@ -92,9 +89,7 @@
                                 .catalog__item-price 5000₽
                 SwiperSlide
                     .catalog__item
-                        .catalog__hot(
-                            v-parallax="{speed: 10}"
-                        )
+                        .catalog__hot
                             img(
                                 src="@/assets/icons/hot.svg"
                             )
@@ -158,10 +153,10 @@ defineProps({
         font-size: 300px;
         transform: rotate(-9deg);
         position: relative;
-        z-index: 10;
         font-family: 'Druk Cyr';
         color: var(--color-yellow);
         z-index: 3;
+        top: -60px;
         span {
             color: var(--color-red);
             margin-top: -200px;
@@ -231,6 +226,17 @@ defineProps({
         }
         &-img {
             overflow: hidden;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: linear-gradient(to bottom, transparent, rgba(#fff, .1));
+            }
             img {
                 display: block;
             }
@@ -274,6 +280,7 @@ defineProps({
         position: absolute;
         left: -110px;
         top: 0;
+        z-index: 3;
         img {
             display: block;
         }

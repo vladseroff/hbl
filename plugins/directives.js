@@ -7,11 +7,17 @@ export default defineNuxtPlugin(nuxtApp => {
             }
             if (!hasParallaxDirective) {
                 window.addEventListener('scroll', el.parallaxVar)
+                setTimeout(() => {
+                    el.parallaxVar()
+                }, 1)
             }
             el.animate = () => {
                 el.style.cssText = `transform: ${binding.value.transform ? binding.value.transform : ''} translateY(${el.getBoundingClientRect().top / binding.value.speed}px)`
             }
             window.addEventListener('scroll', el.animate)
+            setTimeout(() => {
+                el.animate()
+            }, 1)
             hasParallaxDirective = true
         },
         unmounted: (el) => {
@@ -19,22 +25,24 @@ export default defineNuxtPlugin(nuxtApp => {
             window.removeEventListener('scroll', el.parallaxVar)
         },
     })
-    nuxtApp.vueApp.directive('animate', {
+    nuxtApp.vueApp.directive('intersect', {
         mounted: (el, bind) => {
             const options = {
                 rootMargin: "0px",
-                threshold: 1.0
+                threshold: 0.20
             }
         
             const callback = (entries, observer) => {
-                console.log('asdasd');
-                // if(entries[0].isIntersecting) {
-                //     el.classList.add('animation-active')
-                //     setTimeout(() => {
-                //     }, bind.delay || 0)
-                // }
+                console.log(bind);
+                const isIntersecting = entries[0].isIntersecting
+                if  (isIntersecting) {
+                    el.classList.add(...bind.value.true)
+                } else {
+                    if (bind.value.false !== false) {
+                        el.classList.remove(...bind.value.true)
+                    }
+                }
             }
-        
             let observer = new IntersectionObserver(callback, options);
             observer.observe(el);
         },

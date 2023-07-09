@@ -1,9 +1,9 @@
 <template lang="pug">
-.versus
+.versus(
+    v-intersect="{true: ['animate'], false: false}"
+)
     .versus__boxes
-        .versus__box.grey(
-            v-parallax="{speed: 10}"
-        )
+        .versus__box.grey
             .versus__box-figure
                 img(
                     src="/images/img4.png"
@@ -15,9 +15,7 @@
             .versus__text
                 .versus__title HBL CLASSIC t-jaket
                 .versus__price 6000₽
-        .versus__box.blue(
-            v-parallax="{speed: -8}"
-        )
+        .versus__box.blue
             .versus__box-figure
                 img(
                     src="/images/img5.png"
@@ -29,9 +27,7 @@
             .versus__text
                 .versus__title HBL CLASSIC t-SHIRT
                 .versus__price 5000₽
-    .versus__icon(
-        v-parallax="{transform: 'translateX(-50%)', speed: -30}"
-    )
+    .versus__icon
         img(
             src="@/assets/icons/vs.svg"
         )
@@ -42,7 +38,25 @@
     margin-bottom: 100px;
     position: relative;
     padding-bottom: 200px;
+    background: linear-gradient(to bottom, var(--color-yellow) 0%, #fff 60%);
     $root: &;
+    &.white {
+        background: #fff;
+    }
+    &.animate {
+        #{$root} {
+            &__box {
+                transform: none;
+                // &.grey {
+                // }
+            }
+            &__icon {
+                transition-delay: 1s;
+                opacity: 1;
+                transform: translateX(-50%);
+            }
+        }
+    }
     &__text {
         position: absolute;
         bottom: 0;
@@ -74,7 +88,9 @@
         position: absolute;
         left: 50%;
         top: 2%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(2);
+        opacity: 0;
+        transition: .2s ease;
         img {
             display: block;
         }
@@ -82,11 +98,13 @@
     &__boxes {
         display: flex;
         margin-top: -100px;
+        // margin-bottom: -300px;
     }
     &__box {
         flex: 1 1 50%;
         position: relative;
         cursor: pointer;
+        transition: .8s ease;
         $box: &;
         .button {
             position: absolute;
@@ -108,6 +126,7 @@
         }
         &.grey {
             margin-left: -180px;
+            transform: translateX(-100%);
             #{$box} {
                 &-figure {
                     background: #DBDCD6;
@@ -116,8 +135,8 @@
             }
             #{$root} {
                 &__text {
-                    transform: rotate(-13deg) scale(.5);
-                    bottom: -175px;
+                    transform: rotate(-8deg) scale(.5);
+                    bottom: -210px;
                     left: 120px;
                 }
             }
@@ -131,7 +150,7 @@
                 #{$root} {
                     &__text {
                         transform: rotate(-8deg) scale(1);
-                        bottom: -220px;
+                        bottom: -240px;
                         left: 250px;
                     }
                     &__title {
@@ -148,6 +167,7 @@
         &.blue {
             margin-right: -100px;
             margin-left: -100px;
+            transform: translateX(100%);
             #{$box} {
                 &-figure {
                     background: #2C405B;
@@ -156,8 +176,8 @@
             }
             #{$root} {
                 &__text {
-                    transform: rotate(-13deg) scale(.5);
-                    bottom: -203px;
+                    transform: rotate(-8deg) scale(.5);
+                    bottom: -238px;
                     left: -80px;
                 }
             }
@@ -171,7 +191,7 @@
                 #{$root} {
                     &__text {
                         transform: rotate(-8deg) scale(1);
-                        bottom: -250px;
+                        bottom: -268px;
                         left: 40px;
                     }
                     &__title {

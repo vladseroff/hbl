@@ -7,16 +7,17 @@
             src="@/assets/icons/logo2.svg"
         )
     .first-drop__title(
-        v-parallax="{speed: 8}"
+        v-parallax="{speed: -15}"
     ) 1ST DROP
     .first-drop__text(
-        v-parallax="{speed: -30}"
+        v-parallax="{speed: -15}"
     ) ПЕРВАЯ КОЛЛЕКЦИЯ ВЕЩЕЙ УЖЕ НА САЙТЕ 
         br 
         |ШИП ПО ВСЕЙ ПЛАНЕТЕ, НЕ НАДО СОМНЕВАТЬСЯ, 
         br 
         |НАДО ПЕРЕХОДИТЬ ПО ССЫЛКЕ В ИСТОЧНИКЕ
     UiButton(
+        v-parallax="{speed: -15}"
         href="#"
         hoverColor="red"
     ) ВМАГАЗИН

@@ -1,30 +1,28 @@
 <template lang="pug">
 .gallery
-    .gallery__title(
-        v-parallax="{transform: 'rotate(-9deg)', speed: 10}"
-    ) ХБЛ 
+    .gallery__title ХБЛ 
         span В ТЕЛЕГЕ
     .gallery__items
         .gallery__item(
-            v-parallax="{transform: 'rotate(-4.2deg) translateX(70px)', speed: -15}"
+            v-parallax="{transform: 'rotate(-4.2deg) translateX(70px)', speed: -25}"
         )
             img(
                 src="/images/img8.png"
             )
         .gallery__item(
-            v-parallax="{transform: 'rotate(3.9deg) translateX(0px)', speed: 10}"
+            v-parallax="{transform: 'rotate(3.9deg) translateX(0px)', speed: 20}"
         )
             img(
                 src="/images/img9.png"
             )
         .gallery__item(
-            v-parallax="{transform: 'rotate(-4.3deg)', speed: -8}"
+            v-parallax="{transform: 'rotate(-4.3deg)', speed: -35}"
         )
             img(
                 src="/images/img10.png"
             )
         .gallery__item(
-            v-parallax="{transform: 'rotate(3.9deg) translateX(-70px)', speed: 15}"
+            v-parallax="{transform: 'rotate(3.9deg) translateX(-70px)', speed: 22}"
         )
             img(
                 src="/images/img11.png"
@@ -34,7 +32,6 @@
         |СВОЙ РЕСЕПЕКТ И ПРОМОКОД НА НОВЫЕ ПОКУПКИ
     a.gallery__btn(
         href="#"
-        v-parallax="{transform: 'rotate(-9deg)', speed: -15}"
     ) 
         span ГО ТОЖЕ
         em

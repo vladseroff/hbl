@@ -26,18 +26,36 @@ const playing = ref(false)
 const visible = ref(false)
 
 const play = () => {
-    video.value.src = 'https://www.youtube.com/embed/oY9qKzEvIaM?enablejsapi=1&autoplay=1'
     playing.value = true
+    video.value.src = 'https://www.youtube.com/embed/oY9qKzEvIaM?enablejsapi=1&autoplay=1'
 }
 
 onMounted(() => {
-    setTimeout(() => {
-        visible.value = true
-    }, 6000)
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= 1500) {
+            visible.value = true
+        }
+    })
 })
 </script>
 
 <style lang="scss" scoped>
+@keyframes small {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: scale(.7) translate3d(-30%, 30%, 0);
+    }
+}
+// @keyframes big {
+//     0% {
+//         transform: scale(.5) translate3d(-60%, 60%, 0);
+//     }
+//     100% {
+//         transform: scale(1) translate3d(0, 0, 0);
+//     }
+// }
 .video {
     position: fixed;
     left: 55px;
@@ -58,6 +76,7 @@ onMounted(() => {
         opacity: .9;
         pointer-events: all;
         transform: none;
+        animation: small 1s ease 3s forwards;
     }
     &:hover {
         opacity: 1;

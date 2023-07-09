@@ -3,12 +3,16 @@
     BaseHeader
     ModuleHomeBanner
     ModuleFirstDrop
-    ModuleVersus
+    ModuleVersus(
+        :key="1"
+    )
     ModuleHot
     ModuleDelivery
     ModuleGallery
     ModuleCatalog
-    ModuleVersus
+    ModuleVersus.white(
+        :key="2"
+    )
     ModuleBest
     ModuleCatalog(
         minimal

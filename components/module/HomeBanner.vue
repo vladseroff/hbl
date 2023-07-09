@@ -7,14 +7,14 @@
         .banner__carousel-wrapper
             Swiper(
                 :modules="[Autoplay]"
-                :width="1920"
-                slides-per-view="auto"
+                slides-per-view="4"
                 loop
-                freeMode
-                :loopedSlides="4"
-                :space-between="72"
-                :autoplay="{delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true}"
-                :speed="1000"
+                :pause-on-mouse-enter="true"
+                :autoplay="autoplayOptions"
+                :speed="3000"
+                @swiper="onSwiper"
+                @mouseenter="stop"
+                @mouseleave="start"
             )
                 SwiperSlide
                     .banner__item
@@ -60,8 +60,29 @@
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, FreeMode } from 'swiper/modules'
 import 'swiper/css'
+
+const slider = ref(null)
+
+const autoplayOptions = ref({
+    delay: 1,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+})
+
+const stop = (e) => {
+    slider.value.autoplay.pause()
+}
+
+const start = (e) => {
+    slider.value.autoplay.resume()
+}
+
+const onSwiper = (el) => {
+    slider.value = el
+}
+
 
 </script>
 
@@ -91,31 +112,37 @@ import 'swiper/css'
         }
         &-wrapper {
             // display: flex;
-            width: 100vw;
+            // width: 1920px;
+            .swiper {
+                width: 100vw;
+            }
+            .swiper-wrapper{
+                transition-timing-function : linear;
+            }
             .swiper-slide {
-                width: 400px;
+                width: 500px;
             }
         }
     }
     &__item {
         position: relative;
-        &:nth-child(1) {
-            margin-right: -190px;
-            z-index: 2;
-        }
-        &:nth-child(2) {
-            margin-right: -220px;
-            z-index: 3;
-        }
-        &:nth-child(3) {
-            margin-right: -165px;
-            z-index: 4;
-            transform: translateY(-60px);
-        }
-        &:nth-child(4) {
-            z-index: 1;
-            transform: rotate(20deg) translateY(-20px);
-        }
+        // &:nth-child(1) {
+        //     margin-right: -190px;
+        //     z-index: 2;
+        // }
+        // &:nth-child(2) {
+        //     margin-right: -220px;
+        //     z-index: 3;
+        // }
+        // &:nth-child(3) {
+        //     margin-right: -165px;
+        //     z-index: 4;
+        //     transform: translateY(-60px);
+        // }
+        // &:nth-child(4) {
+        //     z-index: 1;
+        //     transform: rotate(20deg) translateY(-20px);
+        // }
         img {
             display: block;
         }

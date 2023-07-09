@@ -6,35 +6,32 @@
         img(
             src="@/assets/icons/logo3.svg"
         )
-    .hot__title HELL BROKE LOOSE 
+    .hot__title(
+        v-parallax="{transform: 'rotate(-9deg)', speed: 10}"
+    ) HELL BROKE LOOSE 
         br 
-        span(
-            v-parallax="{speed: 5}"
-        ) WAY TO HOT
-    .hot__view
-        .hot__item(
-            v-parallax="{speed: -15}"
-        )
+        span WAY TO HOT
+    .hot__view(
+        v-parallax="{speed: -15}"
+    )
+        .hot__item
             img(
                 src="/images/img6.png"
             )
-        .hot__icon(
-            v-parallax="{speed: 10}"
-        )
+        .hot__icon
             img(
                 src="@/assets/icons/hot.svg"
             )
-    .hot__bottom
-        .hot__text(
-            v-parallax="{speed: 7}"
-        ) ЭТИ ФУТБОЛКИ ХИТ НЕДЕЛИ, НО ТЫ МОЖЕШЬ 
+    .hot__bottom(
+        v-parallax="{speed: -15}"
+    )
+        .hot__text ЭТИ ФУТБОЛКИ ХИТ НЕДЕЛИ, НО ТЫ МОЖЕШЬ 
             br 
             |КУПИТЬ ДРУГУЮ, СДЕЛАЕМ ХИТЬМ НЕДЕЛИ ЕЕ, 
             br 
             |КАК СКАЖЕШЬ ТЫ БОСС
         UiButton(
             href="#"
-            v-parallax="{speed: 4}"
         ) ВМАГАЗИН
 </template>
 
@@ -87,7 +84,7 @@
         }
     }
     &__bottom {
-        margin-top: 45px;
+        margin-top: 105px;
     }
     &__text {
         font-size: 18px;

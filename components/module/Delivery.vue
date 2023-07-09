@@ -3,14 +3,16 @@
     .delivery__img
         DecorTapes
         img(
-            v-parallax="{speed: -8}"
+            v-parallax="{speed: 5}"
             src="/images/img7.png"
         )
-    .delivery__title HBL пожалуй лучший бренд 
+    .delivery__title(
+        v-parallax="{speed: 15}"
+    ) HBL пожалуй лучший бренд 
         br
         |на сегодня и на завтра
     .delivery__subtitle(
-        v-parallax="{speed: 10}"
+        v-parallax="{speed: 15}"
     ) Об этом говорят наши ребята 
         br
         |об этом говорим мы
