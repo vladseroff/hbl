@@ -3,20 +3,22 @@
     .delivery__img
         DecorTapes
         img(
-            v-parallax="{speed: 5}"
+            v-parallax="{speed: 15}"
             src="/images/img7.png"
         )
     .delivery__title(
-        v-parallax="{speed: 15}"
+        v-parallax="{speed: 5}"
     ) HBL пожалуй лучший бренд 
         br
         |на сегодня и на завтра
     .delivery__subtitle(
-        v-parallax="{speed: 15}"
+        v-parallax="{speed: 5}"
     ) Об этом говорят наши ребята 
         br
         |об этом говорим мы
-    .delivery__text вот лишь Несколько очевидных плюсов 
+    .delivery__text(
+        v-parallax="{speed: 10}"
+    ) вот лишь Несколько очевидных плюсов 
         br 
         |самая горячая доставка на планете 
         br 
@@ -31,7 +33,9 @@
         |плюс самая горячая доставка на планете 
         br 
         |плюс самая горячая доставка на планете
-    .delivery__hot
+    .delivery__hot(
+        v-parallax="{speed: 10}"
+    )
         img(
             src="@/assets/icons/fire.svg"
         )
@@ -40,12 +44,15 @@
 <style lang="scss">
 .delivery {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 200px;
+    .tapes {
+
+    }
     &__img {
         display: flex;
         justify-content: center;
         position: relative;
-        margin-top: 250px;
+        // margin-top: 250px;
         .tapes {
             top: 0px;
             .tape {
@@ -99,7 +106,7 @@
         font-size: 18px;
         font-weight: 700;
         font-style: italic;
-        margin: 80px 0 35px;
+        margin: 180px 0 35px;
         text-transform: uppercase;
     }
 }

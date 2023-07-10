@@ -4,7 +4,7 @@
 )
     .catalog__title(
         v-if="!minimal"
-        v-parallax="{transform: 'rotate(-9deg)', speed: 15}"
+        v-parallax="{transform: 'rotate(-9deg)', speed: 10}"
     ) HELL BROKE LOOSE 
         br 
         span WAY TO HOT

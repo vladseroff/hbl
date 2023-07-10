@@ -7,10 +7,10 @@
             src="@/assets/icons/logo2.svg"
         )
     .best__title(
-        v-parallax="{speed: 12}"
+        v-parallax="{speed: 8}"
     ) BEST ITEM
     .best__img(
-        v-parallax="{speed: 10}"
+        v-parallax="{speed: 8}"
     )
         img(
             src="/images/img15.png"
