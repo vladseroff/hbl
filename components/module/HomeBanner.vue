@@ -6,15 +6,17 @@
         DecorTapes
         .banner__carousel-wrapper
             Swiper(
+                v-if="show"
                 :modules="[Autoplay]"
                 slides-per-view="4"
                 loop
-                :pause-on-mouse-enter="true"
                 :autoplay="autoplayOptions"
                 :speed="3000"
                 @swiper="onSwiper"
-                @mouseenter="stop"
+                @mouseenter="stop($event)"
                 @mouseleave="start"
+                @autoplayStart="() => console.log('start')"
+                @autoplayStop="() => console.log('stop')"
             )
                 SwiperSlide
                     .banner__item
@@ -61,26 +63,30 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, FreeMode } from 'swiper/modules'
-import 'swiper/css'
+import 'swiper/scss'
+import 'swiper/scss/autoplay'
+import 'swiper/scss/free-mode'
 
-const slider = ref(null)
+let slider = null
+const show = ref(true)
 
-const autoplayOptions = ref({
+const autoplayOptions = reactive({
     delay: 1,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
 })
 
 const stop = (e) => {
-    slider.value.autoplay.pause()
+    console.log(e);
+    slider.autoplay.pause()
 }
 
 const start = (e) => {
-    slider.value.autoplay.resume()
+    slider.autoplay.resume()
 }
 
 const onSwiper = (el) => {
-    slider.value = el
+    slider = el
 }
 
 

@@ -33,7 +33,6 @@ export default defineNuxtPlugin(nuxtApp => {
             }
         
             const callback = (entries, observer) => {
-                console.log(bind);
                 const isIntersecting = entries[0].isIntersecting
                 if  (isIntersecting) {
                     el.classList.add(...bind.value.true)
