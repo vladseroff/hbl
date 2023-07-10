@@ -6,17 +6,14 @@
         DecorTapes
         .banner__carousel-wrapper
             Swiper(
-                v-if="show"
                 :modules="[Autoplay]"
-                slides-per-view="4"
+                slides-per-view="5"
                 loop
+                noSwiping
+                :allowTouchMove="false"
                 :autoplay="autoplayOptions"
-                :speed="3000"
+                :speed="6000"
                 @swiper="onSwiper"
-                @mouseenter="stop($event)"
-                @mouseleave="start"
-                @autoplayStart="() => console.log('start')"
-                @autoplayStop="() => console.log('stop')"
             )
                 SwiperSlide
                     .banner__item
@@ -58,6 +55,16 @@
                         img(
                             src="/images/img1.png"
                         )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img1.png"
+                        )
+                SwiperSlide
+                    .banner__item
+                        img(
+                            src="/images/img2.png"
+                        )
 </template>
 
 <script setup>
@@ -67,8 +74,7 @@ import 'swiper/scss'
 import 'swiper/scss/autoplay'
 import 'swiper/scss/free-mode'
 
-let slider = null
-const show = ref(true)
+let slider = ref(null)
 
 const autoplayOptions = reactive({
     delay: 1,
@@ -77,19 +83,17 @@ const autoplayOptions = reactive({
 })
 
 const stop = (e) => {
-    console.log(e);
-    slider.autoplay.pause()
+    // autoplayOptions.delay = 999999
+    slider.value.autoplay.pause()
 }
 
 const start = (e) => {
-    slider.autoplay.resume()
+    slider.value.autoplay.resume()
 }
 
 const onSwiper = (el) => {
-    slider = el
+    slider.value = el
 }
-
-
 </script>
 
 <style lang="scss">
@@ -120,10 +124,10 @@ const onSwiper = (el) => {
             // display: flex;
             // width: 1920px;
             .swiper {
-                width: 100vw;
+                width: calc(100vw + 500px);
             }
             .swiper-wrapper{
-                transition-timing-function : linear;
+                transition-timing-function: linear;
             }
             .swiper-slide {
                 width: 500px;
