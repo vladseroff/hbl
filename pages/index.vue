@@ -2,12 +2,12 @@
 .app
     BaseHeader
     .app__container
-        ModuleVersus(
-            :key="1"
-        )
         ModuleHomeBanner
         ModuleFirstDrop
         ModuleVideo
+        ModuleVersus(
+            :key="1"
+        )
         ModuleHot
         ModuleDelivery
         ModuleGallery
@@ -34,9 +34,6 @@ onMounted(() => {
     // overflow: hidden;
     position: relative;
     width: 100vw;
-    &__container {
-        overflow: hidden;
-    }
     // &__sticky {
     //     position: absolute;
     //     padding-top: 1500px;
