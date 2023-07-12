@@ -54,7 +54,7 @@
         top: -200px;
     }
     .button {
-        margin-top: -160px;
+        margin-top: -130px;
     }
 }
 </style>
