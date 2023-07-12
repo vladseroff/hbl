@@ -44,7 +44,7 @@
 <style lang="scss">
 .delivery {
     text-align: center;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
     .tapes {
 
     }
