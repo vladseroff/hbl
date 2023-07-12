@@ -1,24 +1,25 @@
 <template lang="pug">
 .app
     BaseHeader
-    ModuleHomeBanner
-    ModuleFirstDrop
-    ModuleVideo
-    ModuleVersus(
-        :key="1"
-    )
-    ModuleHot
-    ModuleDelivery
-    ModuleGallery
-    ModuleCatalog
-    ModuleVersus.white(
-        :key="2"
-    )
-    ModuleBest
-    ModuleCatalog(
-        minimal
-    )
-    ModuleStock
+    .app__container
+        ModuleVersus(
+            :key="1"
+        )
+        ModuleHomeBanner
+        ModuleFirstDrop
+        ModuleVideo
+        ModuleHot
+        ModuleDelivery
+        ModuleGallery
+        ModuleCatalog
+        ModuleVersus.white(
+            :key="2"
+        )
+        ModuleBest
+        ModuleCatalog(
+            minimal
+        )
+        ModuleStock
     BaseFooter
 </template>
 
@@ -33,6 +34,9 @@ onMounted(() => {
     // overflow: hidden;
     position: relative;
     width: 100vw;
+    &__container {
+        overflow: hidden;
+    }
     // &__sticky {
     //     position: absolute;
     //     padding-top: 1500px;
