@@ -61,6 +61,7 @@ onMounted(() => {
     bottom: 0;
     right: 0;
     z-index: 100;
+    pointer-events: none;
 }
 .video {
     position: sticky;
