@@ -3,6 +3,7 @@
     BaseHeader
     ModuleHomeBanner
     ModuleFirstDrop
+    ModuleVideo
     ModuleVersus(
         :key="1"
     )
@@ -18,7 +19,6 @@
         minimal
     )
     ModuleStock
-    ModuleVideo
     BaseFooter
 </template>
 
@@ -30,7 +30,24 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .app {
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
     width: 100vw;
+    // &__sticky {
+    //     position: absolute;
+    //     padding-top: 1500px;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     z-index: 100;
+    //     &-box {
+    //         position: sticky;
+    //         width: 500px;
+    //         height: 500px;
+    //         background: red;
+    //         top: 150px;
+    //     }
+    // }
 }
 </style>

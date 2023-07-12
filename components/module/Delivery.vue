@@ -17,7 +17,7 @@
         br
         |об этом говорим мы
     .delivery__text(
-        v-parallax="{speed: 10}"
+        v-parallax="{speed: 5}"
     ) вот лишь Несколько очевидных плюсов 
         br 
         |самая горячая доставка на планете 
@@ -34,7 +34,7 @@
         br 
         |плюс самая горячая доставка на планете
     .delivery__hot(
-        v-parallax="{speed: 10}"
+        v-parallax="{speed: 5}"
     )
         img(
             src="@/assets/icons/fire.svg"
@@ -106,7 +106,7 @@
         font-size: 18px;
         font-weight: 700;
         font-style: italic;
-        margin: 180px 0 35px;
+        margin: 35px 0;
         text-transform: uppercase;
     }
 }
