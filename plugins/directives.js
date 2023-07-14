@@ -6,7 +6,7 @@ export default defineNuxtPlugin(nuxtApp => {
             // if (!isSafari) {
                 let intersect = false
                 const options = {
-                    rootMargin: "1000px",
+                    rootMargin: "700px",
                     threshold: 0.20
                 }
             
