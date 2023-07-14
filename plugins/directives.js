@@ -2,6 +2,23 @@ export default defineNuxtPlugin(nuxtApp => {
     let hasParallaxDirective = false
     nuxtApp.vueApp.directive('parallax', {
         mounted: (el, binding) => {
+            let intersect = false
+            const options = {
+                rootMargin: "0px",
+                threshold: 0.20
+            }
+        
+            const callback = (entries, observer) => {
+                const isIntersecting = entries[0].isIntersecting
+                if  (isIntersecting) {
+                    intersect = true
+                } else {
+                    intersect = false
+                }
+            }
+            let observer = new IntersectionObserver(callback, options);
+            observer.observe(el);
+
             el.parallaxVar = () => {
                 document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
             }
@@ -12,7 +29,9 @@ export default defineNuxtPlugin(nuxtApp => {
                 }, 1)
             }
             el.animate = () => {
-                el.style.cssText = `transform: ${binding.value.transform ? binding.value.transform : ''} translateY(${el.getBoundingClientRect().top / binding.value.speed}px)`
+                if (intersect) {
+                    el.style.cssText = `transform: ${binding.value.transform ? binding.value.transform : ''} translateY(${el.getBoundingClientRect().top / binding.value.speed}px)`
+                }
             }
             window.addEventListener('scroll', el.animate)
             setTimeout(() => {
