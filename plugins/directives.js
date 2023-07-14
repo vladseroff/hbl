@@ -32,7 +32,7 @@ export default defineNuxtPlugin(nuxtApp => {
                 }
                 el.animate = () => {
                     if (intersect) {
-                        el.style.cssText = `transform: ${binding.value.transform ? binding.value.transform : ''} translateY(${el.getBoundingClientRect().top / binding.value.speed}px)`
+                        el.style.cssText = `transform: ${binding.value.transform ? binding.value.transform : ''} translate3d(0, ${el.getBoundingClientRect().top / binding.value.speed}px, 0)`
                     }
                 }
                 window.addEventListener('scroll', el.animate)
