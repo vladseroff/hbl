@@ -6,21 +6,16 @@
         img(
             src="@/assets/icons/logo2.svg"
         )
-    .first-drop__title(
+    .first-drop__wrapper(
         v-parallax="{speed: -5}"
-    ) 1ST DROP
-    .first-drop__text(
-        v-parallax="{speed: -5}"
-    ) ПЕРВАЯ КОЛЛЕКЦИЯ ВЕЩЕЙ УЖЕ НА САЙТЕ 
-        br 
-        |ШИП ПО ВСЕЙ ПЛАНЕТЕ, НЕ НАДО СОМНЕВАТЬСЯ, 
-        br 
-        |НАДО ПЕРЕХОДИТЬ ПО ССЫЛКЕ В ИСТОЧНИКЕ
-    UiButton(
-        v-parallax="{speed: -5}"
-        href="#"
-        hoverColor="red"
-    ) ВМАГАЗИН
+    )
+        .first-drop__title 1ST DROP
+        .first-drop__text ПЕРВАЯ КОЛЛЕКЦИЯ ВЕЩЕЙ УЖЕ НА САЙТЕ 
+            br 
+            |ШИП ПО ВСЕЙ ПЛАНЕТЕ, НЕ НАДО СОМНЕВАТЬСЯ, 
+            br 
+            |НАДО ПЕРЕХОДИТЬ ПО ССЫЛКЕ В ИСТОЧНИКЕ
+        UiButton ВМАГАЗИН
 </template>
 
 <style lang="scss" scoped>
@@ -36,25 +31,26 @@
         position: relative;
         z-index: 9;
     }
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+        top: -200px;
+    }
     &__title {
         font-weight: 700;
         font-style: italic;
         font-size: 300px;
         transform: rotate(-9deg);
-        position: relative;
-        top: -270px;
-        z-index: 10;
         font-family: 'Druk Cyr';
     }
     &__text {
         font-size: 18px;
         font-weight: 700;
         font-style: italic;
-        position: relative;
-        top: -200px;
+        margin: 55px 0;
     }
     .button {
-        margin-top: -130px;
+        margin: 0 auto;
     }
 }
 </style>

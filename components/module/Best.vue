@@ -15,15 +15,15 @@
         img(
             src="/images/img15.png"
         )
-    .best__text(
+    .best__wrapper(
         v-parallax="{speed: 10}"
-    ) ЛУЧШИЙ ВЫБОР НА ЛЕТО, БУДЕТ ЖАРКО, 
-        br 
-        |А В ПАНАМЕ НЕ БУДЕТ ЖАРКО
-    UiButton(
-        href="#"
-        v-parallax="{speed: 10}"
-    ) ВЫБРАТЬ
+    )
+        .best__text ЛУЧШИЙ ВЫБОР НА ЛЕТО, БУДЕТ ЖАРКО, 
+            br 
+            |А В ПАНАМЕ НЕ БУДЕТ ЖАРКО
+        UiButton(
+            href="#"
+        ) ВЫБРАТЬ
 </template>
 
 <style lang="scss" scoped>
@@ -38,6 +38,8 @@
         img {
             width: 1435px;
         }
+    }
+    &__wrapper {
     }
     &__text {
         font-size: 18px;
@@ -55,7 +57,7 @@
         transform: rotate(-9deg);
         position: relative;
         margin-top: -570px;
-        z-index: 10;
+        text-align: center;
         font-family: 'Druk Cyr';
         color: var(--color-black);
         z-index: 3;

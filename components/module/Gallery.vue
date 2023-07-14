@@ -3,27 +3,19 @@
     .gallery__title ХБЛ 
         span В ТЕЛЕГЕ
     .gallery__items
-        .gallery__item(
-            v-parallax="{transform: 'rotate(-4.2deg) translateX(70px)', speed: -25}"
-        )
+        .gallery__item
             img(
                 src="/images/img8.png"
             )
-        .gallery__item(
-            v-parallax="{transform: 'rotate(3.9deg) translateX(0px)', speed: 20}"
-        )
+        .gallery__item
             img(
                 src="/images/img9.png"
             )
-        .gallery__item(
-            v-parallax="{transform: 'rotate(-4.3deg)', speed: -35}"
-        )
+        .gallery__item
             img(
                 src="/images/img10.png"
             )
-        .gallery__item(
-            v-parallax="{transform: 'rotate(3.9deg) translateX(-70px)', speed: 22}"
-        )
+        .gallery__item
             img(
                 src="/images/img11.png"
             )
@@ -70,7 +62,7 @@
     &__items {
         display: flex;
         justify-content: center;
-        margin-top: -50px;
+        margin-top: -30px;
     }
     &__item {
         position: relative;
@@ -101,6 +93,8 @@
         font-style: italic;
         font-weight: 700;
         cursor: pointer;
+        position: relative;
+        z-index: 5;
         margin-bottom: -60px;
         transition: .3s ease;
         &:hover {

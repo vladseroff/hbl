@@ -73,7 +73,9 @@ onMounted(() => {
             }
             &__logo {
                 width: 240px;
-                transform: translate3d(-700px, -73px, 0);
+                transform: translate3d(0, -73px, 0);
+                position: absolute;
+                left: 8%;
                 img {
                     width: 100%;
                 }

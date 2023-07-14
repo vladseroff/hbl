@@ -11,28 +11,27 @@
     ) HELL BROKE LOOSE 
         br 
         span WAY TO HOT
-    .hot__view(
+    .hot__wrapper(
         v-parallax="{speed: -15}"
     )
-        .hot__item
-            img(
-                src="/images/img6.png"
-            )
-        .hot__icon
-            img(
-                src="@/assets/icons/hot.svg"
-            )
-    .hot__bottom(
-        v-parallax="{speed: -15}"
-    )
-        .hot__text ЭТИ ФУТБОЛКИ ХИТ НЕДЕЛИ, НО ТЫ МОЖЕШЬ 
-            br 
-            |КУПИТЬ ДРУГУЮ, СДЕЛАЕМ ХИТЬМ НЕДЕЛИ ЕЕ, 
-            br 
-            |КАК СКАЖЕШЬ ТЫ БОСС
-        UiButton(
-            href="#"
-        ) ВМАГАЗИН
+        .hot__view
+            .hot__item
+                img(
+                    src="/images/img6.png"
+                )
+            .hot__icon
+                img(
+                    src="@/assets/icons/hot.svg"
+                )
+        .hot__bottom
+            .hot__text ЭТИ ФУТБОЛКИ ХИТ НЕДЕЛИ, НО ТЫ МОЖЕШЬ 
+                br 
+                |КУПИТЬ ДРУГУЮ, СДЕЛАЕМ ХИТЬМ НЕДЕЛИ ЕЕ, 
+                br 
+                |КАК СКАЖЕШЬ ТЫ БОСС
+            UiButton(
+                href="#"
+            ) ВМАГАЗИН
 </template>
 
 <script>
