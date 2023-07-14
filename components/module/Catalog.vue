@@ -205,7 +205,7 @@ defineProps({
             #{$root} {
                 &-text {
                     &-wrapper {
-                        transform: rotate(-9deg) translateY(40px) scale(1);
+                        transform: rotate(-9deg) translate3d(0, 40px, 0) scale(1);
                     }
                 }
                 &-title {
@@ -221,7 +221,7 @@ defineProps({
             left: 50%;
             bottom: 180px;
             opacity: 0;
-            transform: translateX(-50%) translateY(-20px) scale(.8);
+            transform: translateX(-50%) translate3d(0, -20px, 0) scale(.8);
             transition: .3s ease;
         }
         &-img {
@@ -268,7 +268,7 @@ defineProps({
             font-family: 'Druk Cyr';
             font-style: italic;
             color: var(--color-red);
-            transform: scale(.7) translateX(20px) translateY(-20px);
+            transform: scale(.7) translate3d(20px, -20px, 0);
             opacity: 0;
             font-size: 100px;
             margin-left: -14px;

@@ -44,7 +44,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 @keyframes anim {
     0% {
-        transform: translateY(-100%)
+        transform: translate3d(0, -100%, 0)
     }
     100% {
         transform: none;

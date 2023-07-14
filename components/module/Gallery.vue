@@ -71,16 +71,16 @@
             z-index: 2;
         }
         &:nth-child(1) {
-            transform: rotate(-4.2deg) translateY(-60px) translateX(70px);
+            transform: rotate(-4.2deg) translate3d(70px, -60px, 0);
         }
         &:nth-child(2) {
-            transform: rotate(3.9deg) translateY(-80px);
+            transform: rotate(3.9deg) translate3d(0, -80px, 0);
         }
         &:nth-child(3) {
             transform: rotate(-4.3deg);
         }
         &:nth-child(4) {
-            transform: rotate(3.9deg) translateY(-120px) translateX(-70px);
+            transform: rotate(3.9deg) translate3d(-70px, -120px, 0);
         }
     }
     &__btn {

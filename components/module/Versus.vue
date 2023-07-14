@@ -76,7 +76,7 @@
         font-family: 'Druk Cyr';
         font-style: italic;
         color: var(--color-red);
-        transform: scale(.7) translateX(20px) translateY(-20px);
+        transform: scale(.7) translate3d(20px, -20px);
         opacity: 0;
         font-size: 100px;
         margin-top: -30px;
@@ -88,7 +88,7 @@
         position: absolute;
         left: 50%;
         top: 2%;
-        transform: translateX(-50%) scale(2);
+        transform: translate3d(-50%, 0, 0) scale(2);
         opacity: 0;
         transition: .2s ease;
         img {
@@ -110,14 +110,14 @@
             position: absolute;
             left: 60%;
             bottom: 0;
-            transform: scale(.8) rotate(8deg) skew(20deg) translateX(-60%) translateY(-50%);
+            transform: scale(.8) rotate(8deg) skew(20deg) translate3d(-60%, -50%, 0);
             opacity: 0;
             transition: .3s ease;
         }
         &:hover {
             .button {
                 opacity: 1;
-                transform: rotate(8deg) skew(20deg) translateX(-50%) translateY(-50%);
+                transform: rotate(8deg) skew(20deg) translate3d(-50%, -50%, 0);
             }
         }
         &-figure {
@@ -126,7 +126,7 @@
         }
         &.grey {
             margin-left: -180px;
-            transform: translateX(-100%);
+            transform: translate3d(-100%, 0, 0);
             #{$box} {
                 &-figure {
                     background: #DBDCD6;
